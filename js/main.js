@@ -46,7 +46,8 @@
   if ("IntersectionObserver" in window && !prefersReducedMotion) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
+        // görünüme girenler + (ani kaydırmada) görünümün üstünde kalanlar
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
           entry.target.classList.add("is-visible");
           revealObserver.unobserve(entry.target);
         }

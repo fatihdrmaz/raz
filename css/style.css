@@ -753,6 +753,14 @@ button:focus-visible {
   transition: scale .6s var(--ease);
 }
 
+/* beyaz fonlu ürün çekimleri: kırpma yok, ürünün tamamı görünür */
+.showcase__media--contain img {
+  object-fit: contain;
+  background: var(--white);
+  padding: 6%;
+  box-sizing: border-box;
+}
+
 .showcase__media:hover img { scale: 1.02; }
 
 .showcase__tag {
